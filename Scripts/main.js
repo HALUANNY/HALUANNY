@@ -1,7 +1,7 @@
 import { categorias, productosDestacados } from "../Data/catalogo.js";
 
 // ==============================
-// RENDER CATEGORÍAS
+// RENDER CATEGORÍAS (con overlay)
 // ==============================
 const categoriaList = document.querySelector("#categoria-list");
 
@@ -9,10 +9,13 @@ categoriaList.innerHTML = categorias
   .map(cat => `
     <article class="category-item">
       <img src="${cat.img}" alt="${cat.nombre}">
-      <h2>${cat.nombre}</h2>
+      <div class="category-overlay">
+        <span>${cat.nombre}</span>
+      </div>
     </article>
   `)
   .join("");
+
 
 
 // ==============================
@@ -51,7 +54,7 @@ function generarProductoHTML(prod) {
         <li><strong>Material:</strong> ${prod.material}</li>
       </ul>
 
-      <button class="cta">Ver Detalles</button>
+      <button class="cta">Has tu Pedido</button>
     </article>
   `;
 }
@@ -62,7 +65,6 @@ function generarProductoHTML(prod) {
 function generarSeccionCategoria(cat, productos) {
   return `
     <section class="categoria-section">
-      <h2 class="categoria-titulo">${cat.nombre}</h2>
       <div class="productos-grid">
         ${productos.map(generarProductoHTML).join("")}
       </div>

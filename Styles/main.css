@@ -45,8 +45,8 @@ h1, h2, h3 {
   margin-bottom: 12px;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.4rem; }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
 h3 { font-size: 1rem; }
 
 /* Sección estándar */
@@ -73,20 +73,23 @@ section {
 }
 
 
-/* SUBTITLES */
-.subtitle:first-of-type {
-  opacity: 0.45;              
-  font-weight: 200;
-  letter-spacing: 1px;
+/* Primer subtítulo */
+.subtitle:first-of-type {              
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 2.5rem; 
+  margin-bottom: 0px; 
 }
 
+/* Segundo subtítulo */
 .subtitle:last-of-type {
-  font-weight: 400;
-  font-size: 1.3rem;          
-  letter-spacing: 2px;
-  margin-top: -5px;           
+  font-weight: 100;
+  opacity: 0.45;
+  font-size: 1rem;
+  margin-top: -12px; /* elimina el espacio extraño */
   font-family: 'Playfair Display', serif; 
 }
+
 
 .hero-video {
   width: 100%;
@@ -109,16 +112,21 @@ section {
 }
 
 /* 05 · CATEGORÍAS — LINEALES PARA MÓVIL */
-.categories{ 
-    text-align: center;
+
+.categories {
+  text-align: center;
+  max-width: auto;
+  margin: 8px auto;
+  padding: 0 16px;
 }
 
 .category-row {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding-bottom: 8px;
   scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  justify-content: flex-start;
 }
 
 .category-row::-webkit-scrollbar {
@@ -126,38 +134,78 @@ section {
 }
 
 .category-item {
-  flex: 0 0 42%;
+  position: relative; /* necesario para el overlay y el texto */
+  flex: 0 0 55%; /* ancho del item */
   scroll-snap-align: start;
-  text-align: center;
-  background: var(--white);
-  padding: 12px;
   border-radius: var(--radius);
+  overflow: hidden; /* para que el overlay y la imagen no sobresalgan */
   box-shadow: var(--shadow);
 }
 
 .category-item img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 8px;
-  aspect-ratio: 3/4;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+/* Overlay en la parte inferior */
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px 0;
+  background: rgba(0, 0, 0, 0.3); /* negro semitransparente */
+  text-align: center;
+}
+
+.category-overlay span {
+  color:var(--marfil);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+/* ======================== */
+/* Ajustes para pantallas grandes */
+/* ======================== */
+@media (min-width: 768px) {
+  .category-row {
+    overflow-x: visible;       /* ya no hace scroll horizontal */
+    justify-content: center;   /* centra los items */
+    flex-wrap: wrap;           /* permite que los items se alineen en varias filas si hay muchos */
+    gap: 24px;                 /* más espacio entre items */
+  }
+
+  .category-item {
+    flex: 0 0 200px;           /* ancho fijo para pantallas grandes */
+  }
+}
+
+
 /* 06 · PRODUCTO DESTACADO — MOBILE FIRST */
+
+.categoria-section {
+  margin: 0;
+  padding: 0; 
+}
 
 .featured-products {
   text-align: center;
 }
 
+/* Tarjeta de producto */
 .product-detail {
   text-align: center;
-  margin-bottom: 48px;
+  margin: 30px; /* espaciado uniforme */
 }
 
+/* Imagen del producto */
 .detail-img {
   width: 100%;
   aspect-ratio: 3/4;
-  margin: 0 auto 18px;
+  margin: 0 auto 16px; /* espaciado consistente */
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.05);
   background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
@@ -170,15 +218,17 @@ section {
   object-fit: cover;
 }
 
+/* Precio */
 .price {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
+/* Specs (chips de info) */
 .specs {
   list-style: none;
-  margin-block: 12px;
+  margin: 12px 0; /* espaciado uniforme */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -194,9 +244,10 @@ section {
   color: var(--muted);
 }
 
+/* CTA */
 .cta {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px; /* mismo patrón de espaciado */
   padding: 10px 18px;
   border-radius: 8px;
   border: 1px solid var(--dorado);

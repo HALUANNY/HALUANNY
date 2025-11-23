@@ -13,7 +13,7 @@ export const categorias = [
     img: "./Assets/IMG/Categories/BlusaCategories.jpg"
   },
   {
-    id: "pantalon",
+    id: "pantalones",
     nombre: "Pantalón",
     img: "./Assets/IMG/Categories/PantalonCategories.jpg"
   },
@@ -99,7 +99,7 @@ export const productosDestacados = [
 
   // Pantalones
   {
-    categoria: "pantalon",
+    categoria: "pantalones",
     nombre: "Pantalón Palazzo",
     precio: 179000,
     descripcion: "Cintura alta, amplio y fresco.",
@@ -109,7 +109,7 @@ export const productosDestacados = [
     img: "assets/img/productos/palazzo.jpg"
   },
   {
-    categoria: "pantalon",
+    categoria: "pantalones",
     nombre: "Pantalón Chino Slim",
     precio: 159000,
     descripcion: "Corte slim, cómodo y elegante para oficina o casual.",
