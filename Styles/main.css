@@ -204,19 +204,6 @@ section {
   font-weight: 600;
 }
 
-.qr {
-  width: 70px;
-  height: 70px;
-  margin: 16px auto 0;
-  border-radius: var(--radius);
-  border: 1px solid rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
-  color: var(--muted);
-  font-size: 0.75rem;
-}
 
 /* 07 · FOOTER */
 footer {

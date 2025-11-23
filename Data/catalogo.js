@@ -31,6 +31,7 @@ export const categorias = [
 // PRODUCTOS DESTACADOS POR CATEGORÍA
 // ==============================
 export const productosDestacados = [
+  // Vestidos
   {
     categoria: "vestidos",
     nombre: "Vestido Lino Corte A",
@@ -42,6 +43,18 @@ export const productosDestacados = [
     img: "assets/img/productos/vestido-lino.jpg"
   },
   {
+    categoria: "vestidos",
+    nombre: "Vestido Seda Floral",
+    precio: 269000,
+    descripcion: "Seda ligera con estampado floral elegante.",
+    color: "Rosa",
+    tallas: ["S", "M", "L"],
+    material: "Seda",
+    img: "assets/img/productos/vestido-seda-floral.jpg"
+  },
+
+  // Blusas
+  {
     categoria: "blusas",
     nombre: "Blusa Seda Minimal",
     precio: 199000,
@@ -52,7 +65,19 @@ export const productosDestacados = [
     img: "assets/img/productos/blusa-seda.jpg"
   },
   {
-    categoria: "chaquetas",
+    categoria: "blusas",
+    nombre: "Blusa Lino Manga Larga",
+    precio: 179000,
+    descripcion: "Lino fresco con corte holgado y elegante.",
+    color: "Celeste",
+    tallas: ["S", "M", "L"],
+    material: "Lino",
+    img: "assets/img/productos/blusa-lino.jpg"
+  },
+
+  // Conjuntios
+  {
+    categoria: "conjuntos",
     nombre: "Chaqueta Corte Sastre",
     precio: 399000,
     descripcion: "Corte clásico con acabados modernos.",
@@ -62,7 +87,19 @@ export const productosDestacados = [
     img: "assets/img/productos/chaqueta-sastre.jpg"
   },
   {
-    categoria: "pantalones",
+    categoria: "conjuntos",
+    nombre: "Chaqueta Oversize Denim",
+    precio: 359000,
+    descripcion: "Denim lavada con diseño relajado y moderno.",
+    color: "Azul",
+    tallas: ["S", "M", "L", "XL"],
+    material: "Algodón",
+    img: "assets/img/productos/chaqueta-denim.jpg"
+  },
+
+  // Pantalones
+  {
+    categoria: "pantalon",
     nombre: "Pantalón Palazzo",
     precio: 179000,
     descripcion: "Cintura alta, amplio y fresco.",
@@ -70,5 +107,16 @@ export const productosDestacados = [
     tallas: ["S", "M", "L", "XL"],
     material: "Lino liviano",
     img: "assets/img/productos/palazzo.jpg"
+  },
+  {
+    categoria: "pantalon",
+    nombre: "Pantalón Chino Slim",
+    precio: 159000,
+    descripcion: "Corte slim, cómodo y elegante para oficina o casual.",
+    color: "Beige",
+    tallas: ["S", "M", "L", "XL"],
+    material: "Algodón stretch",
+    img: "assets/img/productos/pantalon-chino.jpg"
   }
 ];
+
