@@ -1,4 +1,5 @@
-import { categorias, productosDestacados } from "./Data/catalogo.js";
+import { categorias, productosDestacados } from "../Data/catalogo.js";
+
 // ==============================
 // RENDER CATEGORÍAS
 // ==============================

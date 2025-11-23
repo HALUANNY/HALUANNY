@@ -18,11 +18,12 @@ export const categorias = [
     img: "./Assets/IMG/Categories/PantalonCategories.jpg"
   },
   {
-    id: "conjunto",
+    id: "conjuntos",
     nombre: "Conjuntos",
     img: "./Assets/IMG/Categories/ConjuntoCategories.jpg"
   }
 ];
+
 
 
 
