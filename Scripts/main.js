@@ -9,12 +9,12 @@ categoriaList.innerHTML = categorias
   .map(cat => `
     <article class="category-item">
       <img src="${cat.img}" alt="${cat.nombre}">
-      <h3>${cat.nombre}</h3>
+      <h2>${cat.nombre}</h2>
     </article>
   `)
   .join("");
 
-  // ==============================
+// ==============================
 // RENDER PRODUCTOS DESTACADOS
 // ==============================
 const productList = document.querySelector("#product-list");
@@ -38,7 +38,7 @@ productList.innerHTML = productosDestacados
       </ul>
 
       <a href="#" class="cta">Haz tu pedido</a>
-      <div class="qr">QR</div>
+      
 
     </section>
   `)

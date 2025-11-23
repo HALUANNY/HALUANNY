@@ -57,8 +57,21 @@ section {
 /* 04 · HERO para móviles */
 .hero {
   text-align: center;
-  padding: 40px var(--spacing-side) 20px;
+  padding: 30px var(--spacing-side) 20px;
 }
+
+.hero img {
+  width: 140px;
+  margin: 5px auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hero img:hover {
+  opacity: 1;
+}
+
 
 /* SUBTITLES */
 .subtitle:first-of-type {
@@ -89,13 +102,17 @@ section {
 }
 
 .hero-description{
-   opacity: 0.65;
+  opacity: 0.65;
   font-weight: 200;
   letter-spacing: 1px;
   margin: 5px;
 }
 
 /* 05 · CATEGORÍAS — LINEALES PARA MÓVIL */
+.categories{ 
+    text-align: center;
+}
+
 .category-row {
   display: flex;
   gap: 12px;
@@ -127,6 +144,11 @@ section {
 }
 
 /* 06 · PRODUCTO DESTACADO — MOBILE FIRST */
+
+.featured-products {
+  text-align: center;
+}
+
 .product-detail {
   text-align: center;
   margin-bottom: 48px;
