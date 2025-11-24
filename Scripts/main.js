@@ -76,24 +76,40 @@ function generarProductoHTML(prod, index) {
     </article>
   `;
 }
+// ==============================
+// 3. API WHATSAPP
+// ==============================
 
-// ------------------ Evento WhatsApp ------------------
 document.addEventListener("click", function(e) {
-  if (e.target.matches(".cta")) {
-    const index = e.target.dataset.index;
-    const producto = productos[index]; // tu array de productos
-    const tarjeta = e.target.closest(".producto-card");
-    const tallaSelect = tarjeta.querySelector(".talla-select");
-    const talla = tallaSelect ? tallaSelect.value : "No seleccionada";
+  // Selección de talla
+  if (e.target.matches(".talla-btn")) {
+    const container = e.target.parentElement;
+    container.querySelectorAll(".talla-btn").forEach(btn => btn.classList.remove("selected"));
+    e.target.classList.add("selected");
+  }
 
-    const mensaje = `Hola, quiero pedir el producto: ${producto.nombre}, Talla: ${talla}.`;
-    const numero = "573001234567"; // cambia por tu número
+  // Botón WhatsApp
+  if (e.target.matches(".cta")) {
+    const tarjeta = e.target.closest(".producto-card");
+    if (!tarjeta) return;
+
+    const productoIndex = parseInt(e.target.dataset.index);
+    const producto = productosDestacados[productoIndex];
+    if (!producto) return;
+
+    const tallaBtn = tarjeta.querySelector(".talla-btn.selected");
+    const talla = tallaBtn ? tallaBtn.dataset.talla : "No seleccionada";
+
+    const mensaje = `Hola, estoy interasad@ en la prenda: ${producto.nombre}, en la Talla: ${talla}.`;
+
+    console.log("Mensaje generado:", mensaje); // <- revisar consola
+
+    const numero = "573002550081"; 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, "_blank");
   }
 });
-
 
 
 
