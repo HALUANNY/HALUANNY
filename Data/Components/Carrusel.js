@@ -1,4 +1,4 @@
-// components/Carrusel.js
+// Data/Components/Carrusel.js
 
 export function initCarruseles() {
   const tracks = document.querySelectorAll(".detail-img-track");
@@ -6,12 +6,20 @@ export function initCarruseles() {
 
   tracks.forEach(track => {
     const container = track.parentElement;
-    const card = track.closest(".product-detail");
+
+    // 🔥 Corrección clave:
+    // Buscar el contenedor real de la tarjeta
+    const card = track.closest(".producto-card");
+    if (!card) return; // Evita error si no existe
+
+    // Obtener dots e imágenes dentro de la tarjeta
     const dots = [...card.querySelectorAll(".carousel-dot")];
     const imgs = [...track.querySelectorAll("img")];
 
-    if (!dots.length) return;
+    if (!dots.length || !imgs.length) return;
 
+    // Activar primer dot siempre
+    dots.forEach(d => d.classList.remove("active"));
     dots[0].classList.add("active");
 
     function updateDot() {
@@ -35,6 +43,7 @@ export function initCarruseles() {
       dots.forEach((d, i) => d.classList.toggle("active", i === closest));
     }
 
+    // Scroll listener optimizado (ticking)
     let ticking = false;
     container.addEventListener("scroll", () => {
       if (!ticking) {
@@ -46,12 +55,14 @@ export function initCarruseles() {
       }
     });
 
+    // Reactivar punto cuando carga la imagen
     imgs.forEach(img => {
       if (!img.complete) {
         img.addEventListener("load", updateDot, { once: true });
       }
     });
 
-    setTimeout(updateDot, 80);
+    // Recalibrar al iniciar
+    setTimeout(updateDot, 60);
   });
 }

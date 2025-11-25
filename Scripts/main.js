@@ -1,42 +1,88 @@
-// main.js
+// Scripts/main.js
+
 import { categorias, productosDestacados } from "../Data/catalogo.js";
 import { generarCategorias } from "../Data/Components/Categoria.js";
-import { initCarruseles } from "../Data/Components/Carrusel.js";
 import { generarProductoHTML } from "../Data/Components/Cardproducto.js";
+import { initCarruseles } from "../Data/Components/Carrusel.js";
 import { enviarWhatsApp } from "../Data/Services/WhatsAppService.js";
+import { actualizarColorProducto } from "../Data/Components/ColorController.js";
 import { renderSecciones } from "../Data/Render/Secciones.js";
 
+// ======================
+// 1. RENDER CATEGORÍAS
+// ======================
+document.querySelector("#categoria-list").innerHTML =
+  generarCategorias(categorias);
 
-// ============ CATEGORÍAS ============
-document.querySelector("#categoria-list").innerHTML = generarCategorias(categorias);
-
-// ============ AGRUPAR POR CATEGORÍA ============
+// ======================
+// 2. AGRUPAR PRODUCTOS POR CATEGORÍA
+// ======================
 const productosPorCategoria = productosDestacados.reduce((acc, prod) => {
   (acc[prod.categoria] ||= []).push(prod);
   return acc;
 }, {});
 
-// ============ RENDER SECCIONES ============
-renderSecciones(categorias, productosPorCategoria, document.querySelector("#contenedor-secciones"));
+// ======================
+// 3. RENDER DE SECCIONES
+// ======================
+renderSecciones(
+  categorias,
+  productosPorCategoria,
+  document.querySelector("#contenedor-secciones")
+);
 
-// ============ EVENTOS GLOBALES ============
-document.addEventListener("click", e => {
+// ======================
+// 4. EVENTOS GLOBALES
+// ======================
+document.addEventListener("click", (e) => {
 
+  // ========== Selección de Talla ==========
   if (e.target.matches(".talla-btn")) {
-    const parent = e.target.parentElement;
-    parent.querySelectorAll(".talla-btn").forEach(btn => btn.classList.remove("selected"));
+    const contenedor = e.target.closest(".tallas-container");
+    contenedor.querySelectorAll(".talla-btn")
+      .forEach(btn => btn.classList.remove("selected"));
+
     e.target.classList.add("selected");
+    return;
   }
 
-  if (e.target.matches(".cta")) {
-    const index = parseInt(e.target.dataset.index);
-    const producto = productosDestacados[index];
+  // ========== Selección de Color ==========
+  if (e.target.matches(".color-btn")) {
     const tarjeta = e.target.closest(".producto-card");
-    const talla = tarjeta.querySelector(".talla-btn.selected")?.dataset.talla ?? "No seleccionada";
+    const index = tarjeta.dataset.index;
+    const nuevoColor = e.target.dataset.color;
 
-    enviarWhatsApp(producto, talla);
+    // Estilos visuales
+    const contenedorColores = e.target.closest(".colores-container");
+    contenedorColores.querySelectorAll(".color-btn")
+      .forEach(btn => btn.classList.remove("selected"));
+    e.target.classList.add("selected");
+
+    // Cambio del carrusel
+    actualizarColorProducto(index, nuevoColor);
+    return;
+  }
+
+  // ========== BOTÓN WHATSAPP ==========
+  if (e.target.matches(".cta")) {
+    const tarjeta = e.target.closest(".producto-card");
+    const index = tarjeta.dataset.index;
+    const producto = productosDestacados[index];
+
+    // Talla seleccionada
+    const talla = tarjeta.querySelector(".talla-btn.selected")?.dataset.talla || "No seleccionada";
+
+    // Color seleccionado
+    const color = tarjeta.querySelector(".color-btn.selected")?.dataset.color || "No seleccionado";
+
+    enviarWhatsApp(producto, talla, color);
+    return;
   }
 });
 
-// ============ CARRUSELES ============
-document.addEventListener("DOMContentLoaded", initCarruseles);
+// ======================
+// 5. INICIALIZAR CARRUSELES
+// ======================
+document.addEventListener("DOMContentLoaded", () => {
+  initCarruseles();
+});
