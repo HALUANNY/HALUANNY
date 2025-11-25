@@ -25,8 +25,6 @@ export const categorias = [
 ];
 
 
-
-
 // ==============================
 // PRODUCTOS DESTACADOS POR CATEGORÍA
 // ==============================
