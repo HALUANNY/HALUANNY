@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- BASE para rutas relativas en GitHub Pages -->
-  <base href="/HALUANNY/"> <!-- Cambia "mi-proyecto-web" por el nombre de tu repo -->
+  <base href="/HALUANNY/">
 
   <!-- CSS principal -->
-  <link rel="stylesheet" href="./Styles/main.css">
+  <link rel="stylesheet" href="Styles/main.css">
 
   <!-- Fuentes externas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,44 +18,41 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap">
 
   <!-- JS principal -->
-  <script type="module" src="./Scripts/main.js" defer></script>
+  <script type="module" src="Scripts/main.js" defer></script>
 </head>
 
 <body>
 
-    <header class="hero">
-   <div class="hero-content">
+<header class="hero">
+  <div class="hero-content">
     <div class="hero-header-bg">
-   <h1 class="logo">HALUANNY</h1>
-   <p class="hero-description">ELEGANCIA EN CADA DETALLE</p>
-   <img class="hero-logo" src="Assets/IMG/Banner/LogoHaluanny.png" alt="Logo HALUANNY">
-   </div>
+      <h1 class="logo">HALUANNY</h1>
+      <p class="hero-description">ELEGANCIA EN CADA DETALLE</p>
+      <img class="hero-logo" src="Assets/IMG/Banner/LogoHaluanny.png" alt="Logo HALUANNY">
+    </div>
     
     <h2 class="subtitle first">Nueva Colección</h2>
     <h2 class="subtitle last">SIN MIEDO</h2>
   </div>
 
   <div class="hero-video">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="./Assets/IMG/Banner/BANNER2.mp4" type="video/mp4">
+    <video id="bannerVideo" autoplay muted loop playsinline preload="auto">
+      <source id="bannerSource" type="video/mp4">
     </video>
   </div>
- </header>
+</header>
  
-  <!-- CATEGORÍAS -->
-  <h1 class="title">Categorías</h1>
-  <section class="categories">
-    <div id="categoria-list" class="category-row"></div>
-  </section>
+<!-- CATEGORÍAS -->
+<h1 class="title">Categorías</h1>
+<section class="categories">
+  <div id="categoria-list" class="category-row"></div>
+</section>
 
- <!-- PRODUCTOS DESTACADOS -->
- <section class="featured-products">
+<!-- PRODUCTOS DESTACADOS -->
+<section class="featured-products">
   <h2>Productos Destacados</h2>
-
-  <!-- Contenedor padre común para todas las secciones -->
   <div id="contenedor-secciones"></div>
- </section>
+</section>
 
-  
-</body> 
+</body>
 </html>

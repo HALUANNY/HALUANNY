@@ -18,11 +18,42 @@ productosDestacados.forEach((p, i) => {
 });
 
 
+window.addEventListener('DOMContentLoaded', () => {
+    const bannerVideo = document.getElementById('bannerVideo');
+    const bannerSource = document.getElementById('bannerSource');
+    if (!bannerVideo || !bannerSource) return;
+
+    const basePath = "Assets/IMG/Banner"; // relativo al <base>
+
+    function seleccionarVideo() {
+        const ancho = window.innerWidth;
+        let srcVideo = "";
+
+        if (ancho >= 1024) srcVideo = `${basePath}/BANNER.mp4`;
+        else if (ancho >= 768) srcVideo = `${basePath}/BANNER.mp4`;
+        else srcVideo = `${basePath}/BANNER2.mp4`;
+
+        if (bannerSource.getAttribute('src') !== srcVideo) {
+            bannerSource.setAttribute('src', srcVideo);
+            bannerVideo.load();
+            bannerVideo.play().catch(() => {});
+        }
+    }
+
+    seleccionarVideo();
+    window.addEventListener('resize', seleccionarVideo);
+});
+
+
+
+
+
 // ============================================
 // 2. RENDER CATEGORÍAS
 // ============================================
 document.querySelector("#categoria-list").innerHTML =
   generarCategorias(categorias);
+
 
 
 // ============================================
