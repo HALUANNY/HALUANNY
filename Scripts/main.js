@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 document.addEventListener("click", (e) => {
   const item = e.target.closest(".category-item");
   if (!item) return;
