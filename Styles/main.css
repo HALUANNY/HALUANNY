@@ -303,7 +303,7 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 
 
 .precio {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   margin: 6px;
   color: var(--carbon);
@@ -384,7 +384,7 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   display: inline-flex;
   align-items:center;
   justify-content:center;
-  font-size: 19px;
+  font-size: 22px;
 }
 .cta:hover {
   background: var(--marron);

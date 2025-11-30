@@ -36,7 +36,7 @@ export const productosDestacados = [
     precio: 73000,
     descripcion: "Diseño en lino 100% con caída natural.",
     tallas: ["S", "M", "L"],
-    material: "Tipo de tela: Tela Hermes",
+    material: "Tela Hermes",
     colores: {
       "rgba(234, 214, 214, 1)": [
         "Assets/IMG/Products/Vestidos/VestidoBeige (2).jpg",
@@ -59,7 +59,7 @@ export const productosDestacados = [
     precio: 60000,
     descripcion: "Seda suave en diseño minimalista.",
     tallas: ["S", "M", "L"],
-    material: "Tela Satn",
+    material: "Tela Satin",
     colores: {
       "hsla(213, 92%, 24%, 1.00)": [
         "Assets/IMG/Products/Blusas/BlusaAzul (2).jpg",
@@ -77,10 +77,10 @@ export const productosDestacados = [
    {
     categoria: "blusas",
     nombre: "BLUSA DANNA",
-    precio: 60000,
+    precio: 55000,
     descripcion: "Seda suave en diseño minimalista.",
     tallas: ["S", "M", "L"],
-    material: "Tela Satn",
+    material: "Tela Popelina",
     colores: {
       "rgba(249, 245, 245, 1)": [
         "Assets/IMG/Products/Blusas/BlusaDanna.jpg",
