@@ -38,7 +38,7 @@ export const productosDestacados = [
     tallas: ["S", "M", "L"],
     material: "Tipo de tela: Tela Hermes",
     colores: {
-      beige: [
+      "rgba(234, 214, 214, 1)": [
         "Assets/IMG/Products/Vestidos/VestidoBeige (2).jpg",
         "Assets/IMG/Products/Vestidos/VestidoBeige (1).jpg"
       ],
@@ -59,9 +59,9 @@ export const productosDestacados = [
     precio: 60000,
     descripcion: "Seda suave en diseño minimalista.",
     tallas: ["S", "M", "L"],
-    material: "Tela Satin",
+    material: "Tela Satn",
     colores: {
-      lightblue: [
+      "hsla(213, 92%, 24%, 1.00)": [
         "Assets/IMG/Products/Blusas/BlusaAzul (2).jpg",
         "Assets/IMG/Products/Blusas/BlusaAzul (1).jpg",
         "Assets/IMG/Products/Blusas/BlusaAzul (3).jpg"
@@ -70,6 +70,30 @@ export const productosDestacados = [
         "Assets/IMG/Products/Blusas/BlusaNegra (1).jpg",
         "Assets/IMG/Products/Blusas/BlusaNegra (2).jpg",
         "Assets/IMG/Products/Blusas/BlusaNegra (3).jpg"
+      ]
+    }
+  },
+
+   {
+    categoria: "blusas",
+    nombre: "BLUSA DANNA",
+    precio: 60000,
+    descripcion: "Seda suave en diseño minimalista.",
+    tallas: ["S", "M", "L"],
+    material: "Tela Satn",
+    colores: {
+      "rgba(249, 245, 245, 1)": [
+        "Assets/IMG/Products/Blusas/BlusaDanna.jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaClara (1).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaClara (2).jpg"
+      ],
+      "rgba(162, 117, 88, 1)": [
+        "Assets/IMG/Products/Blusas/BlusaDannaBeige (2).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaBeige (1).jpg"
+      ],
+      "rgba(33, 30, 35, 1)": [
+        "Assets/IMG/Products/Blusas/BlusaDannaOscura (2).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaOscura (1).jpg"
       ]
     }
   },
@@ -89,7 +113,28 @@ export const productosDestacados = [
         "Assets/IMG/Products/Conjuntos/ConjuntoClaro (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoClaro (3).jpg"
       ],
-      navy: [
+      "rgba(35, 41, 64, 1)": [
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg"
+      ]
+    }
+  },
+
+  {
+    categoria: "conjuntos",
+    nombre: "ZAFARI",
+    precio: 140000,
+    descripcion: "Corte clásico con acabados modernos.",
+    tallas: ["S", "M", "L"],
+    material: "Tela Dril",
+    colores: {
+      "rgba(237, 213, 184, 1)": [
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (1).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (2).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (3).jpg"
+      ],
+      "rgba(185, 144, 99, 1)": [
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg"
@@ -100,18 +145,18 @@ export const productosDestacados = [
   // Pantalones
   {
     categoria: "pantalones",
-    nombre: "Pantalón Palazzo",
+    nombre: "PANTALÓN MELANY",
     precio: 85000,
     descripcion: "Cintura alta, amplio y fresco.",
     tallas: ["S", "M", "L"],
     material: "Tela Hermes",
     colores: {
-  white: [
+  "rgba(226, 220, 215, 1)": [
     "Assets/IMG/Products/Pantalones/PantalonBlanco (1).jpg",
     "Assets/IMG/Products/Pantalones/PantalonBlanco (2).jpg",
     "Assets/IMG/Products/Pantalones/PantalonBlanco (3).jpg"
   ],
-  beige: [
+  "rgba(188, 145, 111, 1)": [
     "Assets/IMG/Products/Pantalones/PantalonNegro (1).jpg",
     "Assets/IMG/Products/Pantalones/PantalonNegro (2).jpg",
     "Assets/IMG/Products/Pantalones/PantalonNegro (3).jpg"
