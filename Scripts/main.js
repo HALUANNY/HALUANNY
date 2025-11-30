@@ -107,3 +107,23 @@ document.addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   initCarruseles();
 });
+
+
+
+
+document.addEventListener("click", (e) => {
+  const item = e.target.closest(".category-item");
+  if (!item) return;
+
+  const target = item.dataset.target;
+  const section = document.querySelector(target);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+});
+
+

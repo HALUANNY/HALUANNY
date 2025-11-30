@@ -1,5 +1,3 @@
-// Data/Components/Carrusel.js
-
 export function initCarruseles() {
   const tracks = document.querySelectorAll(".detail-img-track");
   if (!tracks.length) return;
@@ -7,18 +5,17 @@ export function initCarruseles() {
   tracks.forEach(track => {
     const container = track.parentElement;
 
-    // 🔥 Corrección clave:
-    // Buscar el contenedor real de la tarjeta
+    // Buscar tarjeta contenedora
     const card = track.closest(".producto-card");
-    if (!card) return; // Evita error si no existe
+    if (!card) return;
 
-    // Obtener dots e imágenes dentro de la tarjeta
     const dots = [...card.querySelectorAll(".carousel-dot")];
     const imgs = [...track.querySelectorAll("img")];
 
     if (!dots.length || !imgs.length) return;
 
-    // Activar primer dot siempre
+    /* 🔥 1) FORZAR SIEMPRE INICIO EN LA PRIMERA IMAGEN */
+    container.scrollLeft = 0;
     dots.forEach(d => d.classList.remove("active"));
     dots[0].classList.add("active");
 
@@ -43,7 +40,7 @@ export function initCarruseles() {
       dots.forEach((d, i) => d.classList.toggle("active", i === closest));
     }
 
-    // Scroll listener optimizado (ticking)
+    /* 🔥 2) ACTUALIZAR DOTS EN SCROLL */
     let ticking = false;
     container.addEventListener("scroll", () => {
       if (!ticking) {
@@ -55,7 +52,7 @@ export function initCarruseles() {
       }
     });
 
-    // Reactivar punto cuando carga la imagen
+    // Recalibrar cuando cargan las imágenes
     imgs.forEach(img => {
       if (!img.complete) {
         img.addEventListener("load", updateDot, { once: true });
@@ -63,6 +60,38 @@ export function initCarruseles() {
     });
 
     // Recalibrar al iniciar
-    setTimeout(updateDot, 60);
+    setTimeout(() => {
+      container.scrollLeft = 0;
+      updateDot();
+    }, 50);
+
+    /* 🔥 3) MOUSE DRAG PARA PC */
+    let isDown = false;
+    let startX, scrollLeftStart;
+
+    container.addEventListener("mousedown", e => {
+      isDown = true;
+      container.classList.add("dragging");
+      startX = e.pageX - container.offsetLeft;
+      scrollLeftStart = container.scrollLeft;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      isDown = false;
+      container.classList.remove("dragging");
+    });
+
+    container.addEventListener("mouseup", () => {
+      isDown = false;
+      container.classList.remove("dragging");
+    });
+
+    container.addEventListener("mousemove", e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.3; // Velocidad del drag
+      container.scrollLeft = scrollLeftStart - walk;
+    });
   });
 }

@@ -42,7 +42,7 @@ export const productosDestacados = [
         "Assets/IMG/Products/Vestidos/VestidoBeige (2).jpg",
         "Assets/IMG/Products/Vestidos/VestidoBeige (1).jpg"
       ],
-      negro: [
+      black: [
         "Assets/IMG/Products/Vestidos/VestidoNegro (4).jpg",
         "Assets/IMG/Products/Vestidos/VestidoNegro (1).jpg",
         "Assets/IMG/Products/Vestidos/VestidoNegro (3).jpg",
@@ -78,18 +78,18 @@ export const productosDestacados = [
   // Conjuntos
   {
     categoria: "conjuntos",
-    nombre: "Chaqueta Corte Sastre",
+    nombre: "Conjunto Danna",
     precio: 399000,
     descripcion: "Corte clásico con acabados modernos.",
     tallas: ["M", "L"],
     material: "Lino + Algodón",
     colores: {
-      beige: [
+      lightblue: [
         "Assets/IMG/Products/Conjuntos/ConjuntoClaro (1).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoClaro (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoClaro (3).jpg"
       ],
-      lightblue: [
+      navy: [
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg"
@@ -106,16 +106,17 @@ export const productosDestacados = [
     tallas: ["S", "M", "L", "XL"],
     material: "Lino liviano",
     colores: {
-      black: [
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (1).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (2).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (3).jpg"
-      ],
-      beige: [
-        "Assets/IMG/Products/Pantalones/PantalonNegro (3).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonNegro (1).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonNegro (2).jpg"
-      ]
-    }
+  white: [
+    "Assets/IMG/Products/Pantalones/PantalonBlanco (1).jpg",
+    "Assets/IMG/Products/Pantalones/PantalonBlanco (2).jpg",
+    "Assets/IMG/Products/Pantalones/PantalonBlanco (3).jpg"
+  ],
+  beige: [
+    "Assets/IMG/Products/Pantalones/PantalonNegro (1).jpg",
+    "Assets/IMG/Products/Pantalones/PantalonNegro (2).jpg",
+    "Assets/IMG/Products/Pantalones/PantalonNegro (3).jpg"
+  ]
+}
+
   }
 ]  

@@ -9,7 +9,7 @@ export function renderSecciones(categorias, productosPorCategoria, contenedor) {
       if (!productos.length) return "";
 
       return `
-        <section class="categoria-section">
+        <section id="${cat.id}" class="categoria-section">
           <div class="productos-grid">
             ${productos
               .map(prod => generarProductoHTML(prod, prod.globalIndex))
