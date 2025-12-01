@@ -130,13 +130,14 @@ export const productosDestacados = [
         "Assets/IMG/Products/Conjuntos/ConjuntoZafari (1).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoZafari (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoZafari (3).jpg",
-      ],
-      "rgba(185, 144, 99, 1)": [
+      ]
+    /* ==========================
+     "rgba(185, 144, 99, 1)": [
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
         "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg",
-      ],
-    },
+      ],========================== */
+    }, 
   },
 
   // Pantalones

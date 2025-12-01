@@ -395,11 +395,12 @@ section {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
+  color: var(--carbon);
   transition: background 0.12s ease, transform 0.12s ease;
 }
 .talla-btn.selected {
-  background: var(--carbon);
-  color: var(--white);
+  background: var(--beige);
+  color: var(--carbon);
   border-color: rgba(0, 0, 0, 0.18);
 }
 
