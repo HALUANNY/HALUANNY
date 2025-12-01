@@ -53,7 +53,7 @@ export function Footer() {
          <h3>Contáctanos</h3>
 
          <div class="contact-item">
-         <img src="Assets/Icons/Whatsapp.png" alt="WhatsApp" class="icon">
+         <img src="Assets/Icons/Whatsapp.png" alt="WhatsApp" class="png">
          <span>+57 3160410345</span>
          </div>
 
