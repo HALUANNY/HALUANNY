@@ -7,6 +7,7 @@ import { initCarruseles } from "../Data/Components/Carrusel.js";
 import { enviarWhatsApp } from "../Data/Services/WhatsAppService.js";
 import { actualizarColorProducto } from "../Data/Components/ColorController.js";
 import { renderSecciones } from "../Data/Render/Secciones.js";
+import { Footer } from "../Data/Components/Footer.js";
 
 // ============================================
 // 1. ASIGNAR ÍNDICE GLOBAL A CADA PRODUCTO
@@ -17,44 +18,43 @@ productosDestacados.forEach((p, i) => {
   p.globalIndex = i;
 });
 
+// ============================================
+// 2. RENDER BANNER
+// ============================================
 
-window.addEventListener('DOMContentLoaded', () => {
-    const bannerVideo = document.getElementById('bannerVideo');
-    const bannerSource = document.getElementById('bannerSource');
-    if (!bannerVideo || !bannerSource) return;
+window.addEventListener("DOMContentLoaded", () => {
+  const bannerVideo = document.getElementById("bannerVideo");
+  const bannerSource = document.getElementById("bannerSource");
+  if (!bannerVideo || !bannerSource) return;
 
-    const basePath = "Assets/IMG/Banner"; // relativo al <base>
+  const basePath = "Assets/IMG/Banner"; // relativo al <base>
 
-    function seleccionarVideo() {
-        const ancho = window.innerWidth;
-        let srcVideo = "";
+  function seleccionarVideo() {
+    const ancho = window.innerWidth;
+    let srcVideo = "";
 
-        if (ancho >= 1024) srcVideo = `${basePath}/BANNER1.mp4`;
-        else if (ancho >= 768) srcVideo = `${basePath}/BANNER1.mp4`;
-        else srcVideo = `${basePath}/BANNER2.mp4`;
+    if (ancho >= 1024) srcVideo = `${basePath}/BANNER1.mp4`;
+    else if (ancho >= 768) srcVideo = `${basePath}/BANNER1.mp4`;
+    else srcVideo = `${basePath}/BANNER2.mp4`;
 
-        if (bannerSource.getAttribute('src') !== srcVideo) {
-            bannerSource.setAttribute('src', srcVideo);
-            bannerVideo.load();
-            bannerVideo.play().catch(() => {});
-        }
+    if (bannerSource.getAttribute("src") !== srcVideo) {
+      bannerSource.setAttribute("src", srcVideo);
+      bannerVideo.load();
+      bannerVideo.play().catch(() => {});
     }
+  }
 
-    seleccionarVideo();
-    window.addEventListener('resize', seleccionarVideo);
+  seleccionarVideo();
+  window.addEventListener("resize", seleccionarVideo);
 });
 
-
-
-
+// ================================================================================
 
 // ============================================
 // 2. RENDER CATEGORÍAS
 // ============================================
 document.querySelector("#categoria-list").innerHTML =
   generarCategorias(categorias);
-
-
 
 // ============================================
 // 3. AGRUPAR PRODUCTOS POR CATEGORÍA
@@ -63,7 +63,6 @@ const productosPorCategoria = productosDestacados.reduce((acc, prod) => {
   (acc[prod.categoria] ||= []).push(prod);
   return acc;
 }, {});
-
 
 // ============================================
 // 4. RENDER DE SECCIONES (CON ÍNDICE GLOBAL)
@@ -74,18 +73,19 @@ renderSecciones(
   document.querySelector("#contenedor-secciones")
 );
 
+document.querySelector("#app-footer").innerHTML = Footer();
 
 // ============================================
 // 5. EVENTOS GLOBALES → COLORES, TALLAS, WHATSAPP
 // ============================================
 document.addEventListener("click", (e) => {
-
   // ========== SELECCIONAR TALLA ==========
   if (e.target.matches(".talla-btn")) {
     const contenedor = e.target.closest(".tallas-container");
 
-    contenedor.querySelectorAll(".talla-btn")
-      .forEach(btn => btn.classList.remove("selected"));
+    contenedor
+      .querySelectorAll(".talla-btn")
+      .forEach((btn) => btn.classList.remove("selected"));
 
     e.target.classList.add("selected");
     return;
@@ -93,15 +93,15 @@ document.addEventListener("click", (e) => {
 
   // ========== SELECCIONAR COLOR ==========
   if (e.target.matches(".color-btn")) {
-
     const tarjeta = e.target.closest(".producto-card");
-    const indexGlobal = tarjeta.dataset.index;       // <--- AHORA CORRECTO
+    const indexGlobal = tarjeta.dataset.index; // <--- AHORA CORRECTO
     const nuevoColor = e.target.dataset.color;
 
     // Estilos
     const contenedorColores = tarjeta.querySelector(".colores-container");
-    contenedorColores.querySelectorAll(".color-btn")
-      .forEach(btn => btn.classList.remove("selected"));
+    contenedorColores
+      .querySelectorAll(".color-btn")
+      .forEach((btn) => btn.classList.remove("selected"));
 
     e.target.classList.add("selected");
 
@@ -129,7 +129,6 @@ document.addEventListener("click", (e) => {
     enviarWhatsApp(producto, talla, color);
     return;
   }
-
 });
 
 // ============================================
@@ -139,10 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initCarruseles();
 });
 
-
-
-
-
+// ============================================
+// 6. DESPLAZAMIENTO PRODUCTOS DESTACADOS
+// ============================================
 document.addEventListener("click", (e) => {
   const item = e.target.closest(".category-item");
   if (!item) return;
@@ -153,9 +151,7 @@ document.addEventListener("click", (e) => {
   if (section) {
     section.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "start",
     });
   }
 });
-
-

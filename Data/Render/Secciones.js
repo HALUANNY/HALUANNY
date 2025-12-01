@@ -4,14 +4,14 @@ import { generarProductoHTML } from "../Components/Cardproducto.js";
 
 export function renderSecciones(categorias, productosPorCategoria, contenedor) {
   const html = categorias
-    .map(cat => {
+    .map((cat) => {
       const productos = productosPorCategoria[cat.id] || [];
       if (!productos.length) return "";
 
       // Generamos HTML de los productos visibles inicialmente
       const productosHTML = productos
         .slice(0, 3)
-        .map(prod => generarProductoHTML(prod, prod.globalIndex))
+        .map((prod) => generarProductoHTML(prod, prod.globalIndex))
         .join("");
 
       return `
@@ -27,7 +27,7 @@ export function renderSecciones(categorias, productosPorCategoria, contenedor) {
   contenedor.innerHTML = html;
 
   // --- Aplicar CSS Grid responsive y botón "Ver más" ---
-  document.querySelectorAll(".categoria-section").forEach(section => {
+  document.querySelectorAll(".categoria-section").forEach((section) => {
     const grid = section.querySelector(".productos-grid");
     if (!grid) return;
 
@@ -38,13 +38,16 @@ export function renderSecciones(categorias, productosPorCategoria, contenedor) {
       let columnas = 1;
       let limiteProductos = 1; // Para mostrar el botón
 
-      if (width >= 1024) { // Desktop
+      if (width >= 1024) {
+        // Desktop
         columnas = Math.min(productos.length, 3);
         limiteProductos = 3;
-      } else if (width >= 768) { // Tablet
+      } else if (width >= 768) {
+        // Tablet
         columnas = Math.min(productos.length, 2);
         limiteProductos = 2;
-      } else { // Móvil
+      } else {
+        // Móvil
         columnas = 1;
         limiteProductos = 2;
       }

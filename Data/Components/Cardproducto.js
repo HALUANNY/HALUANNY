@@ -8,16 +8,16 @@ export function generarProductoHTML(prod, index) {
     .join("");
 
   const botonesColores = Object.keys(prod.colores)
-  .map(
-    (color) => `
+    .map(
+      (color) => `
       <button 
         class="color-btn" 
         data-color="${color}"
         style="background:${color};">
       </button>
     `
-  )
-  .join("");
+    )
+    .join("");
 
   return `
     <article class="producto-card" data-index="${index}">
@@ -27,7 +27,9 @@ export function generarProductoHTML(prod, index) {
           ${imagenes
             .map(
               (src, i) =>
-                `<img src="${src}" alt="${prod.nombre} ${i + 1}" loading="lazy">`
+                `<img src="${src}" alt="${prod.nombre} ${
+                  i + 1
+                }" loading="lazy">`
             )
             .join("")}
         </div>
@@ -47,7 +49,9 @@ export function generarProductoHTML(prod, index) {
 
       <div class="tallas-container">
         ${prod.tallas
-          .map(t => `<button class="talla-btn" data-talla="${t}">${t}</button>`)
+          .map(
+            (t) => `<button class="talla-btn" data-talla="${t}">${t}</button>`
+          )
           .join("")}
       </div>
 

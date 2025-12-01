@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>HALUANNY</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HALUANNY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- BASE para rutas relativas en GitHub Pages -->
-  <base href="/HALUANNY/">
+    <!-- BASE para rutas relativas en GitHub Pages -->
+    <base href="/HALUANNY" />
 
-  <!-- CSS principal -->
-  <link rel="stylesheet" href="Styles/main.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="Styles/main.css" />
 
-  <!-- Fuentes externas -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap">
+    <!-- Fuentes externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
+    />
 
-  <!-- JS principal -->
-  <script type="module" src="Scripts/main.js" defer></script>
-</head>
+    <!-- JS principal -->
+    <script type="module" src="Scripts/main.js" defer></script>
+  </head>
 
-<body>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-header-bg">
+          <h1 class="logo">HALUANNY</h1>
+          <p class="hero-description">ELEGANCIA EN CADA DETALLE</p>
+          <img
+            class="hero-logo"
+            src="Assets/IMG/Banner/LogoHaluanny.png"
+            alt="Logo HALUANNY"
+          />
+        </div>
 
-<header class="hero">
-  <div class="hero-content">
-    <div class="hero-header-bg">
-      <h1 class="logo">HALUANNY</h1>
-      <p class="hero-description">ELEGANCIA EN CADA DETALLE</p>
-      <img class="hero-logo" src="Assets/IMG/Banner/LogoHaluanny.png" alt="Logo HALUANNY">
-    </div>
-    
-    <h2 class="subtitle first">Nueva Colección</h2>
-    <h2 class="subtitle last">SIN MIEDO</h2>
-  </div>
+        <h2 class="subtitle first">Nueva Colección</h2>
+        <h2 class="subtitle last">SIN MIEDO</h2>
+      </div>
 
-  <div class="hero-video">
-    <video id="bannerVideo" autoplay muted loop playsinline preload="auto">
-      <source id="bannerSource" type="video/mp4">
-    </video>
-  </div>
-</header>
- 
-<!-- CATEGORÍAS -->
-<h1 class="title">Categorías</h1>
-<section class="categories">
-  <div id="categoria-list" class="category-row"></div>
-</section>
+      <div class="hero-video">
+        <video id="bannerVideo" autoplay muted loop playsinline preload="auto">
+          <source id="bannerSource" type="video/mp4" />
+        </video>
+      </div>
+    </header>
 
-<!-- PRODUCTOS DESTACADOS -->
-<section class="featured-products">
-  <h2>Productos Destacados</h2>
-  <div id="contenedor-secciones"></div>
-</section>
+    <!-- CATEGORÍAS -->
+    <h1 class="title">Categorías</h1>
+    <section class="categories">
+      <div id="categoria-list" class="category-row"></div>
+    </section>
 
-</body>
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="featured-products">
+      <h2>Productos Destacados</h2>
+      <div id="contenedor-secciones"></div>
+    </section>
+
+    <div id="app-footer"></div>
+  </body>
 </html>

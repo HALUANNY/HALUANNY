@@ -18,7 +18,9 @@ export function actualizarColorProducto(index, nuevoColor) {
     return;
   }
 
-  const tarjeta = document.querySelector(`.producto-card[data-index="${index}"]`);
+  const tarjeta = document.querySelector(
+    `.producto-card[data-index="${index}"]`
+  );
   if (!tarjeta) return;
 
   const track = tarjeta.querySelector(".detail-img-track");
@@ -34,7 +36,7 @@ export function actualizarColorProducto(index, nuevoColor) {
     // --- 2. Ajustar número de imágenes ---
     if (nuevasImagenes.length > imgs.length) {
       // Agregar imágenes faltantes
-      nuevasImagenes.slice(imgs.length).forEach(src => {
+      nuevasImagenes.slice(imgs.length).forEach((src) => {
         const img = document.createElement("img");
         img.loading = "lazy";
         img.draggable = false;
@@ -43,7 +45,7 @@ export function actualizarColorProducto(index, nuevoColor) {
       });
     } else if (nuevasImagenes.length < imgs.length) {
       // Eliminar imágenes extra
-      [...imgs].slice(nuevasImagenes.length).forEach(img => img.remove());
+      [...imgs].slice(nuevasImagenes.length).forEach((img) => img.remove());
     }
 
     // --- 3. Actualizar src de las imágenes existentes ---

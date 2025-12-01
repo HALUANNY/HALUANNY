@@ -6,16 +6,20 @@
 /* 01 · Reset / Vars */
 *,
 *::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-:root{
-  --marfil: #F6F3F0;
-  --carbon: #1F1F1F;
-  --dorado: #C7A86B;
-  --muted: #7B7B7B;
-  --white: #FFFFFF;
-  --marron :#4B2E2E;
-  --beige : #EADCC8; 
+:root {
+  --marfil: #f6f3f0;
+  --carbon: #1f1f1f;
+  --dorado: #c7a86b;
+  --muted: #7b7b7b;
+  --white: #ffffff;
+  --marron: #4b2e2e;
+  --beige: #eadcc8;
   --radius: 12px;
   --space-s: 8px;
   --space-m: 16px;
@@ -27,20 +31,33 @@
 
 /* 02 · Base */
 
-h1,h2,h3 { font-family: var(--font-title); font-weight: 600; margin-bottom: 8px; }
-h1{ font-size: 3.5rem; }
-h2{ font-size: 2.7rem; }
-h3{ font-size: 1rem; }
-
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2.7rem;
+}
+h3 {
+  font-size: 1rem;
+}
 
 /* 03 · Sections spacing */
-section { padding: 20px 16px; }
+section {
+  padding: 20px 16px;
+}
 
 /* 04 · Hero (keeps your existing look but clean) */
-:root{
+:root {
   --video-height: 70vh;
 }
-.logo{
+.logo {
   font-size: 3.5rem;
   font-weight: 900;
   letter-spacing: 4px;
@@ -52,7 +69,7 @@ section { padding: 20px 16px; }
   color: var(--marfil);
 }
 
-.hero-header-bg{
+.hero-header-bg {
   background-color: black;
   width: 100%;
 }
@@ -67,8 +84,9 @@ section { padding: 20px 16px; }
   margin-bottom: 12px;
 }
 
-.hero img {width: 180px;
-filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
+.hero img {
+  width: 180px;
+  filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
 }
 
 /* Subtitles */
@@ -78,7 +96,7 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 
 .subtitle.first {
   font-weight: 600;
-  opacity: 0.40;
+  opacity: 0.4;
   font-size: 1.5rem;
   margin-top: 20px;
   color: black !important;
@@ -86,14 +104,14 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 
 .subtitle.last {
   font-weight: 800;
-  font-size: 3.4rem!important;
+  font-size: 3.4rem !important;
   margin: 0;
   letter-spacing: 3px;
   color: black !important;
 }
 
 .hero-description {
-  opacity: .85;
+  opacity: 0.85;
   letter-spacing: 2px;
 }
 
@@ -115,22 +133,31 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 
 /* Responsive */
 @media (max-width: 720px) {
-  :root { --video-height: 80vh; }
-  .subtitle.last { font-size: 1.6rem; }
+  :root {
+    --video-height: 80vh;
+  }
+  .subtitle.last {
+    font-size: 1.6rem;
+  }
 
   .hero-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.9) contrast(1.2) saturate(1.1) blur(0.5px);
-  transition: filter 0.5s ease; /* opcional: animación suave */
- } 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.2) saturate(1.1) blur(0.5px);
+    transition: filter 0.5s ease; /* opcional: animación suave */
+  }
 }
 
-
 /* 05 · Categories row (mobile) */
-.categories { max-width: auto; margin: 0 auto 6px; }
-.title{text-align: center; margin:0px;}
+.categories {
+  max-width: auto;
+  margin: 0 auto 6px;
+}
+.title {
+  text-align: center;
+  margin: 0px;
+}
 .category-row {
   display: flex;
   gap: 7px;
@@ -139,40 +166,54 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
-.category-row::-webkit-scrollbar{ height: 0; }
-.category-item{
+.category-row::-webkit-scrollbar {
+  height: 0;
+}
+.category-item {
   flex: 0 0 75%;
   scroll-snap-align: start;
   overflow: hidden;
   position: relative;
   min-height: 120px;
 }
-.category-item img{ width:100%; height:100%; object-fit: cover; display:block; }
+.category-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* overlay */
-.category-overlay{
-  position: absolute; left:0; right:0; bottom:0;
-  background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,0.05));
-  padding: 8px 0; text-align: center;
+.category-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05));
+  padding: 8px 0;
+  text-align: center;
 }
-.category-overlay span{ color: var(--white); font-weight: 100; font-size: 25px; }
+.category-overlay span {
+  color: var(--white);
+  font-weight: 100;
+  font-size: 25px;
+}
 
 /* 06 · Featured products container */
 /* ==========================
    FEATURED PRODUCTS HEADER
    ========================== */
-.featured-products { 
-  margin: 0 auto; 
+.featured-products {
+  margin: 0 auto;
   text-align: center;
   font-weight: 900;
 }
 
-
 /* ==========================
    SECCIÓN POR CATEGORÍA
    ========================== */
-.categoria-section { 
-  margin-bottom: 1px; 
+.categoria-section {
+  margin-bottom: 1px;
 }
 
 /* GRID BASE (fluido y sin restricciones) */
@@ -183,13 +224,12 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   padding: 0 4px;
 }
 
-
 /* ==========================
    PRODUCT CARD — FIXED FOR GRID
    ========================== */
 .producto-card {
-  width: 100%;          /* 🔥 CLAVE: no más 520px */
-  max-width: 100%;      /* 🔥 evita romper columnas */
+  width: 100%; /* 🔥 CLAVE: no más 520px */
+  max-width: 100%; /* 🔥 evita romper columnas */
   background: transparent;
   padding: 0;
   box-shadow: none;
@@ -200,15 +240,13 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   box-sizing: border-box;
 }
 
-
 /* ==========================
    CARRUSEL (imágenes fluidas)
    ========================== */
 
-   
 .detail-img-container {
-  width: 100%;          /* antes 85% → bloqueaba columnas */
-  max-width: 100% ;      /* antes 370px → lo rompía */
+  width: 100%; /* antes 85% → bloqueaba columnas */
+  max-width: 100%; /* antes 370px → lo rompía */
   margin: 0 0 var(--space-m);
   position: relative;
   overflow: hidden;
@@ -224,19 +262,20 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   touch-action: pan-x;
   scrollbar-width: none;
 }
-.detail-img-track::-webkit-scrollbar { display: none; }
+.detail-img-track::-webkit-scrollbar {
+  display: none;
+}
 
 .detail-img-track img {
   flex: 0 0 100%;
   width: 100%;
-  height: auto;                    /* AUTOAJUSTABLE REAL */
+  height: auto; /* AUTOAJUSTABLE REAL */
   display: block;
   object-fit: cover;
   scroll-snap-align: start;
   user-select: none;
   -webkit-user-drag: none;
 }
-
 
 /* ==========================
    INDICADORES DEL CARRUSEL
@@ -252,14 +291,13 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.16);
-  transition: transform .12s ease, background .12s ease;
+  background: rgba(0, 0, 0, 0.16);
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 .carousel-dot.active {
   background: var(--marron);
   transform: scale(1.12);
 }
-
 
 /* ==========================
    ANIMACIÓN PREMIUM
@@ -275,7 +313,6 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   transition: all 0.35s ease;
 }
 
-
 /* ==========================
    META: NOMBRE + PRECIO
    ========================== */
@@ -287,20 +324,19 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
 }
 
 .tela-description {
-  display: inline-flex;           /* para que solo ocupe lo necesario */
+  display: inline-flex; /* para que solo ocupe lo necesario */
   justify-content: center;
   align-items: center;
   font-size: 0.95rem;
-  padding: 4px 14px;              /* más compacto y elegante */
-  border-radius: 20px;            /* pastilla suave */ 
-  color: var(--carbon);            /* texto oscuro para contraste */
+  padding: 4px 14px; /* más compacto y elegante */
+  border-radius: 20px; /* pastilla suave */
+  color: var(--carbon); /* texto oscuro para contraste */
   font-weight: 500;
   text-align: center;
-  margin: 6px auto 10px;          /* separa del título y precio */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* ligera profundidad */
+  margin: 6px auto 10px; /* separa del título y precio */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ligera profundidad */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 .precio {
   font-size: 2rem;
@@ -308,7 +344,6 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   margin: 6px;
   color: var(--carbon);
 }
-
 
 /* ==========================
    COLORES
@@ -325,17 +360,16 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: transparent;
   cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 .color-btn.selected {
   transform: scale(1.08);
-  border-color: rgba(0,0,0,.22);
-  outline: 2px solid rgba(199,168,107,0.14);
+  border-color: rgba(0, 0, 0, 0.22);
+  outline: 2px solid rgba(199, 168, 107, 0.14);
 }
-
 
 /* ==========================
    TALLAS
@@ -349,24 +383,25 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   justify-content: center;
   align-items: center;
 }
-.tallas-container::-webkit-scrollbar { display: none; }
+.tallas-container::-webkit-scrollbar {
+  display: none;
+}
 
 .talla-btn {
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: var(--white);
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  transition: background .12s ease, transform .12s ease;
+  transition: background 0.12s ease, transform 0.12s ease;
 }
 .talla-btn.selected {
   background: var(--carbon);
   color: var(--white);
-  border-color: rgba(0,0,0,0.18);
+  border-color: rgba(0, 0, 0, 0.18);
 }
-
 
 /* ==========================
    CTA
@@ -380,10 +415,10 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   background: var(--marron);
   font-weight: 700;
   cursor: pointer;
-  transition: background .12s ease, color .12s ease, transform .12s ease;
+  transition: background 0.12s ease, color 0.12s ease, transform 0.12s ease;
   display: inline-flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   font-size: 22px;
 }
 .cta:hover {
@@ -392,34 +427,149 @@ filter: brightness(0) invert(1) drop-shadow(3px 3px 5px rgba(0,0,0,0.5));
   transform: translateY(-2px);
 }
 
-
 /* 14 · Footer */
-footer { text-align: center; padding: 28px 12px; color: var(--muted); }
+/* ==============================
+   Footer Container - Premium Style
+   ============================== */
+.footer-container {
+  background-color: var(--beige);
+  padding: 40px 30px;              /* más espacioso */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: 'Playfair Display', serif; /* tipografía elegante */
+  color: #333;
+}
+
+/* Secciones internas */
+.footer-section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-weight: 600;                /* más ligero y elegante */
+  letter-spacing: 1px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 8px 0;
+  font-weight: 300;                /* más fino */
+  color: #444;
+}
+
+.footer-section ul {
+  padding-left: 22px;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+/* Contenedor de bloques pequeños */
+.footer-info-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Cada bloque individual */
+.footer-section {
+  flex: 1 1 auto;
+  min-width: auto;
+}
+
+/* Métodos de pago y redes */
+
+.footer-section .footer-pagos {
+  /* Ajusta si quieres un padding o alineación específica */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  align-items: center; /* Alinea a la izquierda, puedes cambiar a center si quieres centrado */
+  text-align: center;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column; /* Poner los íconos en columna */
+  gap: 30px;
+  align-items: flex-start; /* Puedes usar center para centrar los íconos */
+  transition: transform 0.3s ease;
+}
+
+.payment-methods img {
+  width: 110px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.payment-methods img:hover,
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.footer-contacto .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* espacio entre filas */
+}
+
+.footer-contacto .icon {
+  width: 48px;        /* tamaño uniforme */
+  height: auto;
+  margin-right: 8px;  /* espacio entre icono y texto */
+}
+
+/* Links o textos interactivos */
+.footer-section a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-info-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+
+
 
 /* =========================================================
    🔷 BREAKPOINT TABLET – 768px+
    ========================================================= */
 @media (min-width: 768px) {
-
   /* Espaciado general más respirable */
-  section { 
-    padding: 48px clamp(24px, 4vw, 48px); 
+  section {
+    padding: 48px clamp(24px, 4vw, 48px);
   }
 
   /* ================================
      🔹 CATEGORÍAS – Mejor centrado
      ================================ */
-  .category-row { 
-    gap: 22px; 
-    justify-content: center; 
+  .category-row {
+    gap: 22px;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 8px 0;
   }
 
   .category-item {
     flex: 0 0 220px !important;
-    height: 400px!important;
-    transition: transform .35s ease, filter .35s ease;
+    height: 400px !important;
+    transition: transform 0.35s ease, filter 0.35s ease;
   }
 
   .category-item:hover {
@@ -430,14 +580,14 @@ footer { text-align: center; padding: 28px 12px; color: var(--muted); }
   /* ================================
      🔹 PRODUCTOS DESTACADOS
      ================================ */
-  
+
   /* Distribución elegante */
   .categoria-section .productos-grid {
-  display: flex;
-  gap: 18px;
-  justify-items: center;
-  padding: 0 4px;
-}
+    display: flex;
+    gap: 18px;
+    justify-items: center;
+    padding: 0 4px;
+  }
 
   /* Imágenes más amplias */
   .detail-img-container {
@@ -454,31 +604,32 @@ footer { text-align: center; padding: 28px 12px; color: var(--muted); }
     max-width: 100%;
   }
   /* Titulares refinados */
-  h1 { font-size: clamp(4rem, 4vw, 3.6rem); }
-  h2 { font-size: clamp(4rem, 3vw, 2.3rem); }
-
+  h1 {
+    font-size: clamp(4rem, 4vw, 3.6rem);
+  }
+  h2 {
+    font-size: clamp(4rem, 3vw, 2.3rem);
+  }
   
-
 }
 
 /* =========================================================
    🖥 BREAKPOINT DESKTOP – 1100px+
    ========================================================= */
 @media (min-width: 1100px) {
-
   /* Categorías ampliadas */
   .category-item {
-    flex: 0 0 350px!important;
-    height: 600px!important;
+    flex: 0 0 350px !important;
+    height: 600px !important;
   }
 
   /* Distribución elegante */
   .categoria-section .productos-grid {
-  display: grid;
-  gap: 18px;
-  justify-items: center;
-  padding: 0 4px;
-}
+    display: grid;
+    gap: 18px;
+    justify-items: center;
+    padding: 0 4px;
+  }
 
   /* Imágenes más amplias */
   .detail-img-container {
@@ -494,4 +645,3 @@ footer { text-align: center; padding: 28px 12px; color: var(--muted); }
     max-width: 100%;
   }
 }
-

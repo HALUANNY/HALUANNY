@@ -4,7 +4,7 @@ export function initCarruseles() {
   const tracks = document.querySelectorAll(".detail-img-track");
   if (!tracks.length) return;
 
-  tracks.forEach(track => {
+  tracks.forEach((track) => {
     const container = track.parentElement;
     const card = track.closest(".producto-card");
     if (!card) return;
@@ -12,7 +12,7 @@ export function initCarruseles() {
     // --- Función para obtener referencias dinámicas ---
     const updateRefs = () => ({
       imgs: [...track.querySelectorAll("img")],
-      dots: [...card.querySelectorAll(".carousel-dot")]
+      dots: [...card.querySelectorAll(".carousel-dot")],
     });
 
     // --- FORZAR INICIO ---
@@ -79,23 +79,26 @@ export function initCarruseles() {
 
     // --- IntersectionObserver para detectar imagen activa ---
     const { imgs } = updateRefs();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = imgs.indexOf(entry.target);
-          const { dots } = updateRefs();
-          dots.forEach((d, i) => d.classList.toggle("active", i === index));
-        }
-      });
-    }, {
-      root: container,
-      threshold: 0.5 // al menos 50% visible
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = imgs.indexOf(entry.target);
+            const { dots } = updateRefs();
+            dots.forEach((d, i) => d.classList.toggle("active", i === index));
+          }
+        });
+      },
+      {
+        root: container,
+        threshold: 0.5, // al menos 50% visible
+      }
+    );
 
-    imgs.forEach(img => observer.observe(img));
+    imgs.forEach((img) => observer.observe(img));
 
     // --- Recalibrar al iniciar ---
-    imgs.forEach(img => {
+    imgs.forEach((img) => {
       if (!img.complete) {
         img.addEventListener("load", updateDot, { once: true });
       }
@@ -110,7 +113,7 @@ export function initCarruseles() {
     let isDown = false;
     let startX, scrollLeftStart;
 
-    container.addEventListener("mousedown", e => {
+    container.addEventListener("mousedown", (e) => {
       isDown = true;
       container.classList.add("dragging");
       startX = e.pageX - container.offsetLeft;
@@ -127,7 +130,7 @@ export function initCarruseles() {
       container.classList.remove("dragging");
     });
 
-    container.addEventListener("mousemove", e => {
+    container.addEventListener("mousemove", (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - startX;
