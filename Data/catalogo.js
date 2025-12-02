@@ -38,14 +38,14 @@ export const productosDestacados = [
     material: "Tela Hermes",
     colores: {
       "rgba(234, 214, 214, 1)": [
-        "Assets/IMG/Products/Vestidos/VestidoBeige (2).jpg",
-        "Assets/IMG/Products/Vestidos/VestidoBeige (1).jpg",
+        "Assets/IMG/Products/Vestidos/VestidoBeige (2).webp",
+        "Assets/IMG/Products/Vestidos/VestidoBeige (1).webp",
       ],
       black: [
-        "Assets/IMG/Products/Vestidos/VestidoNegro (4).jpg",
-        "Assets/IMG/Products/Vestidos/VestidoNegro (1).jpg",
-        "Assets/IMG/Products/Vestidos/VestidoNegro (3).jpg",
-        "Assets/IMG/Products/Vestidos/VestidoNegro (2).jpg",
+        "Assets/IMG/Products/Vestidos/VestidoNegro (4).webp",
+        "Assets/IMG/Products/Vestidos/VestidoNegro (1).webp",
+        "Assets/IMG/Products/Vestidos/VestidoNegro (3).webp",
+        "Assets/IMG/Products/Vestidos/VestidoNegro (2).webp",
       ],
     },
   },
@@ -60,14 +60,14 @@ export const productosDestacados = [
     material: "Tela Satin",
     colores: {
       "hsla(213, 92%, 24%, 1.00)": [
-        "Assets/IMG/Products/Blusas/BlusaAzul (2).jpg",
-        "Assets/IMG/Products/Blusas/BlusaAzul (1).jpg",
-        "Assets/IMG/Products/Blusas/BlusaAzul (3).jpg",
+        "Assets/IMG/Products/Blusas/BlusaAzul (2).webp",
+        "Assets/IMG/Products/Blusas/BlusaAzul (1).webp",
+        "Assets/IMG/Products/Blusas/BlusaAzul (3).webp",
       ],
       black: [
-        "Assets/IMG/Products/Blusas/BlusaNegra (1).jpg",
-        "Assets/IMG/Products/Blusas/BlusaNegra (2).jpg",
-        "Assets/IMG/Products/Blusas/BlusaNegra (3).jpg",
+        "Assets/IMG/Products/Blusas/BlusaNegra (1).webp",
+        "Assets/IMG/Products/Blusas/BlusaNegra (2).webp",
+        "Assets/IMG/Products/Blusas/BlusaNegra (3).webp",
       ],
     },
   },
@@ -81,17 +81,17 @@ export const productosDestacados = [
     material: "Tela Popelina",
     colores: {
       "rgba(249, 245, 245, 1)": [
-        "Assets/IMG/Products/Blusas/BlusaDanna.jpg",
-        "Assets/IMG/Products/Blusas/BlusaDannaClara (1).jpg",
-        "Assets/IMG/Products/Blusas/BlusaDannaClara (2).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDanna.webp",
+        "Assets/IMG/Products/Blusas/BlusaDannaClara (1).webp",
+        "Assets/IMG/Products/Blusas/BlusaDannaClara (2).webp",
       ],
       "rgba(162, 117, 88, 1)": [
-        "Assets/IMG/Products/Blusas/BlusaDannaBeige (2).jpg",
-        "Assets/IMG/Products/Blusas/BlusaDannaBeige (1).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaBeige (2).webp",
+        "Assets/IMG/Products/Blusas/BlusaDannaBeige (1).webp",
       ],
       "rgba(33, 30, 35, 1)": [
-        "Assets/IMG/Products/Blusas/BlusaDannaOscura (2).jpg",
-        "Assets/IMG/Products/Blusas/BlusaDannaOscura (1).jpg",
+        "Assets/IMG/Products/Blusas/BlusaDannaOscura (2).webp",
+        "Assets/IMG/Products/Blusas/BlusaDannaOscura (1).webp",
       ],
     },
   },
@@ -106,14 +106,14 @@ export const productosDestacados = [
     material: "Tela Vengalina",
     colores: {
       "rgba(98, 119, 150, 1)": [
-        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (1).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (2).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (3).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (1).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (2).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoClaro (3).webp",
       ],
       "rgba(35, 41, 64, 1)": [
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).webp",
       ],
     },
   },
@@ -127,15 +127,15 @@ export const productosDestacados = [
     material: "Tela Dril",
     colores: {
       "rgba(237, 213, 184, 1)": [
-        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (1).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (2).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (3).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (1).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (2).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoZafari (3).webp",
       ]
     /* ==========================
      "rgba(185, 144, 99, 1)": [
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).jpg",
-        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).jpg",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (2).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (1).webp",
+        "Assets/IMG/Products/Conjuntos/ConjuntoOscuro (3).webp",
       ],========================== */
     }, 
   },
@@ -150,14 +150,14 @@ export const productosDestacados = [
     material: "Tela Hermes",
     colores: {
       "rgba(226, 220, 215, 1)": [
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (1).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (2).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonBlanco (3).jpg",
+        "Assets/IMG/Products/Pantalones/PantalonBlanco (1).webp",
+        "Assets/IMG/Products/Pantalones/PantalonBlanco (2).webp",
+        "Assets/IMG/Products/Pantalones/PantalonBlanco (3).webp",
       ],
       "rgba(188, 145, 111, 1)": [
-        "Assets/IMG/Products/Pantalones/PantalonNegro (1).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonNegro (2).jpg",
-        "Assets/IMG/Products/Pantalones/PantalonNegro (3).jpg",
+        "Assets/IMG/Products/Pantalones/PantalonNegro (1).webp",
+        "Assets/IMG/Products/Pantalones/PantalonNegro (2).webp",
+        "Assets/IMG/Products/Pantalones/PantalonNegro (3).webp",
       ],
     },
   },
