@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>HALUANNY</title>
+
+    <!-- VIEWPORT -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- BASE para rutas relativas en GitHub Pages -->
-    <base href="/HALUANNY/">
+    <!-- BASE URL para GitHub Pages -->
+    <base href="/HALUANNY" />
 
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="Styles/main.css" />
-
-    <!-- Fuentes externas -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- =============================
+         OPTIMIZACIÓN CSS (NO BLOQUEANTE)
+         ============================= -->
+    <link rel="preload" href="Styles/main.css" as="style" />
     <link
       rel="stylesheet"
+      href="Styles/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- =============================
+         GOOGLE FONTS OPTIMIZADO
+         ============================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
     />
 
-    <!-- JS principal -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- =============================
+         JS PRINCIPAL (DEFER)
+         ============================= -->
     <script type="module" src="Scripts/main.js" defer></script>
   </head>
 
@@ -30,10 +53,16 @@
         <div class="hero-header-bg">
           <h1 class="logo">HALUANNY</h1>
           <p class="hero-description">ELEGANCIA EN CADA DETALLE</p>
+
+          <!-- =============================
+               LCP OPTIMIZADO
+               fetchpriority="high"
+               ============================= -->
           <img
             class="hero-logo"
             src="Assets/IMG/Banner/LogoHaluanny.png"
             alt="Logo HALUANNY"
+            fetchpriority="high"
           />
         </div>
 
@@ -41,8 +70,18 @@
         <h2 class="subtitle last">SIN MIEDO</h2>
       </div>
 
+      <!-- =============================
+           VIDEO OPTIMIZADO (NO bloquea render)
+           ============================= -->
       <div class="hero-video">
-        <video id="bannerVideo" autoplay muted loop playsinline preload="auto">
+        <video
+          id="bannerVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        >
           <source id="bannerSource" type="video/mp4" />
         </video>
       </div>
@@ -60,6 +99,7 @@
       <div id="contenedor-secciones"></div>
     </section>
 
+    <!-- FOOTER -->
     <div id="app-footer"></div>
   </body>
 </html>
