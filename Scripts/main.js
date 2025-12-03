@@ -59,12 +59,25 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  import("../Data/Components/Footer.js").then(({ Footer }) => {
-    document.querySelector("#app-footer").innerHTML = Footer();
-  });
-
   import("../Data/Components/Carrusel.js").then(({ initCarruseles }) => {
     initCarruseles();
+  });
+
+  // Scroll a secciones de productos
+  document.addEventListener("click", (e) => {
+    const item = e.target.closest(".category-item");
+    if (!item) return;
+    const target = item.dataset.target;
+    const section = document.querySelector(target);
+    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Eventos de selección de talla
+  document.addEventListener("click", (e) => {
+    if (!e.target.matches(".talla-btn")) return;
+    const contenedor = e.target.closest(".tallas-container");
+    contenedor.querySelectorAll(".talla-btn").forEach(btn => btn.classList.remove("selected"));
+    e.target.classList.add("selected");
   });
 
   import("../Data/Services/WhatsAppService.js").then(({ enviarWhatsApp }) => {
@@ -79,35 +92,10 @@ window.addEventListener("DOMContentLoaded", () => {
       enviarWhatsApp(producto, talla, color);
     });
   });
-
-  import("../Data/Components/ColorController.js").then(({ actualizarColorProducto }) => {
-    // Eventos de selección de color
-    document.addEventListener("click", (e) => {
-      if (!e.target.matches(".color-btn")) return;
-      const tarjeta = e.target.closest(".producto-card");
-      const indexGlobal = tarjeta.dataset.index;
-      const nuevoColor = e.target.dataset.color;
-      const contenedorColores = tarjeta.querySelector(".colores-container");
-      contenedorColores.querySelectorAll(".color-btn").forEach(btn => btn.classList.remove("selected"));
-      e.target.classList.add("selected");
-      actualizarColorProducto(indexGlobal, nuevoColor);
-    });
+  
+  import("../Data/Components/Footer.js").then(({ Footer }) => {
+    document.querySelector("#app-footer").innerHTML = Footer();
   });
 
-  // Eventos de selección de talla
-  document.addEventListener("click", (e) => {
-    if (!e.target.matches(".talla-btn")) return;
-    const contenedor = e.target.closest(".tallas-container");
-    contenedor.querySelectorAll(".talla-btn").forEach(btn => btn.classList.remove("selected"));
-    e.target.classList.add("selected");
-  });
-
-  // Scroll a secciones de productos
-  document.addEventListener("click", (e) => {
-    const item = e.target.closest(".category-item");
-    if (!item) return;
-    const target = item.dataset.target;
-    const section = document.querySelector(target);
-    if (section) section.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
 });
+
