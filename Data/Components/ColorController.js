@@ -13,10 +13,12 @@ export function actualizarColorProducto(index, nuevoColor) {
   if (!producto) return;
 
   const nuevasImagenes = producto.colores[nuevoColor];
+  console.log("Cambiando color del producto", index, "a", nuevoColor, nuevasImagenes);
   if (!nuevasImagenes) {
-    console.warn(`Color no encontrado: ${nuevoColor}`);
-    return;
+  console.warn(`Color no encontrado: ${nuevoColor}`);
+  return;
   }
+
 
   const tarjeta = document.querySelector(
     `.producto-card[data-index="${index}"]`
@@ -74,6 +76,6 @@ export function actualizarColorProducto(index, nuevoColor) {
     }, 50);
 
     // --- 7. Re-inicializar el carrusel SOLO para esta tarjeta ---
-    initCarruseles();
+    initCarruseles(tarjeta);
   }, 200);
 }

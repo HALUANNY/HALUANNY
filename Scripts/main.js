@@ -6,6 +6,8 @@ import { generarCategorias } from "../Data/Components/Categoria.js";
 window.addEventListener("DOMContentLoaded", () => {
 
 
+  
+
   // Inserta el navbar EN EL MOMENTO CORRECTO
   import("../Data/Components/Navbar.js").then(({ crearNavbar }) => {
   crearNavbar("#app-navbar"); // <- aquí colocas el ID donde quieres que aparezca
@@ -45,26 +47,47 @@ window.addEventListener("DOMContentLoaded", () => {
   // RENDER CATEGORÍAS
   document.querySelector("#categoria-list").innerHTML =
     generarCategorias(categorias);
+    
+  // Renderizamos productos y secciones
+import("../Data/Components/Cardproducto.js").then(({ generarProductoHTML }) => {
+  import("../Data/Render/Secciones.js").then(({ renderSecciones }) => {
+    const productosPorCategoria = productosDestacados.reduce((acc, prod) => {
+      (acc[prod.categoria] ||= []).push(prod);
+      return acc;
+    }, {});
 
-  // COMPONENTES SECUNDARIOS
-  import("../Data/Components/Cardproducto.js").then(({ generarProductoHTML }) => {
-    import("../Data/Render/Secciones.js").then(({ renderSecciones }) => {
-      const productosPorCategoria = productosDestacados.reduce((acc, prod) => {
-        (acc[prod.categoria] ||= []).push(prod);
-        return acc;
-      }, {});
+    renderSecciones(
+      categorias,
+      productosPorCategoria,
+      document.querySelector("#contenedor-secciones")
+    );
 
-      renderSecciones(
-        categorias,
-        productosPorCategoria,
-        document.querySelector("#contenedor-secciones")
-      );
+    // --- Inicializar carruseles solo después de renderizar ---
+    import("../Data/Components/Carrusel.js").then(async({ initCarruseles }) => {
+      initCarruseles();
+
+      // --- Listener de selección de color ---
+      const { actualizarColorProducto } = await import("../Data/Components/ColorController.js");
+      document.querySelector("#contenedor-secciones").addEventListener("click", (e) => {
+        if (!e.target.matches(".color-btn")) return;
+
+        const tarjeta = e.target.closest(".producto-card");
+        const indexGlobal = parseInt(tarjeta.dataset.index);
+        const nuevoColor = e.target.dataset.color;
+
+        // Estilos de selección
+        const contenedorColores = tarjeta.querySelector(".colores-container");
+        contenedorColores.querySelectorAll(".color-btn").forEach(btn => btn.classList.remove("selected"));
+        e.target.classList.add("selected");
+
+        // Actualizar carrusel para este producto
+        actualizarColorProducto(indexGlobal, nuevoColor);
+      });
     });
   });
+});
 
-  import("../Data/Components/Carrusel.js").then(({ initCarruseles }) => {
-    initCarruseles();
-  });
+
 
   // Scroll a secciones
   document.addEventListener("click", (e) => {
@@ -108,3 +131,4 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#app-footer").innerHTML = Footer();
   });
 });
+

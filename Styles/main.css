@@ -92,20 +92,34 @@ section {
 .hero-navbar {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin: 50px;
+  align-items: center;
+  gap: 10px;                 /* más compacto en móvil */
+  margin: 20px 0px 40px 0px; /* margen reducido en móviles */
+  width: 100%;               /* ocupa todo el ancho disponible */
+  max-width: 360px;          /* límite para móviles */
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
-
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  font-size: 1rem;
+  padding: 8px 6px;         /* padding interno para toque cómodo */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
+  border-bottom: 1px solid black; /* ← línea negra debajo del contenedor */
 }
 
 .hero-navbar a {
-  color: #2d2d2d;
+  color: var(--carbon);
   text-decoration: none;
   padding-bottom: 3px;
   position: relative;
+}
+
+/* Solo en pantallas grandes, efecto hover */
+@media (min-width: 768px) {
+  .hero-navbar a::after {
+    transform: scaleX(0);   /* Oculta línea inicialmente en desktop */
+  }
+  .hero-navbar a:hover::after {
+    transform: scaleX(1);   /* Se expande al pasar el mouse */
+  }
 }
 
 .hero-navbar a:hover {
